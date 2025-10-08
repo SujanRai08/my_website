@@ -1,0 +1,25 @@
+Understanding of the Case (index.html, style.css, script-step2.js)
+
+This small project demonstrates the concept of event-driven programming in JavaScript using HTML, CSS, and JS files.
+index.html:
+
+It provides the basic structure of the web page. 
+The page includes:
+An input field where the user types text.
+A “Submit” button that triggers an event.
+A paragraph element (<p>) to display the output.
+A placeholder for dynamically added buttons (#buttonContainer) and an “Add New Button” feature (for later steps).
+
+It links to style.css for styling and script-step2.js for interactivity.
+
+style.css:
+Handles the visual design of the page (not shown here but typically used for layout, spacing, colors, and font styling).
+
+script-step2.js:
+Demonstrates event handling in JavaScript.
+
+It adds an event listener to the “Submit” button (#submitBtn).
+
+When clicked, it reads the text entered in the input field and displays it dynamically inside the paragraph element (#output).
+Core Concept:
+This example shows how user actions (events) such as clicking a button can trigger JavaScript functions to make a web page interactive — a key principle in event-driven programming.
