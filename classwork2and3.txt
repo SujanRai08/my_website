@@ -1,0 +1,79 @@
+Event-Driven Programming (EDP)
+
+Definition:
+Event-Driven Programming means a program waits for events (like clicks, typing, or mouse moves) and reacts when they happen using event handlers (functions that respond).
+
+What the HTML Does
+<input id="inputField">
+<button id="submitBtn">Submit</button>
+<div id="buttonContainer"></div>
+<button id="addBtn">Add Button</button>
+<p id="output"></p>
+
+
+inputField → where the user types
+
+submitBtn → triggers the event when clicked
+
+addBtn → creates new buttons dynamically
+
+output → displays the result
+
+buttonContainer → holds dynamically created buttons
+
+The page waits for the user’s action — that’s event-driven behavior.
+
+JavaScript Example 1
+document.getElementById('submitBtn').addEventListener('click', function() {
+    let input = document.getElementById('inputField').value;
+    document.getElementById('output').innerText = "You entered: " + input;
+});
+
+
+Explanation:
+
+Waits for a click event on the button.
+
+When clicked → takes the text input and shows:
+"You entered: HelloWorld"
+
+JavaScript Example 2 (Event Delegation)
+document.getElementById('submitBtn').addEventListener('click', function() {
+    let input = document.getElementById('inputField').value;
+    document.getElementById('output').innerText = "You entered: " + input;
+});
+
+// Event delegation for dynamically added buttons
+document.getElementById('addBtn').addEventListener('click', function() {
+    let newButton = document.createElement('button');
+    newButton.innerText = "New Button";
+    document.getElementById('buttonContainer').appendChild(newButton);
+});
+
+document.getElementById('buttonContainer').addEventListener('click', function(e) {
+    if (e.target.tagName === 'BUTTON') {
+        alert('You clicked ' + e.target.innerText);
+    }
+});
+
+
+Explanation:
+
+Adds new buttons dynamically.
+
+Uses event delegation to handle clicks on any new buttons inside buttonContainer.
+
+Reacts by showing an alert with the button’s name.
+
+In Simple Words
+
+Nothing happens until you click something.
+When you do, the program reacts immediately — showing or doing something in response.
+
+Summary Table
+Concept	Example
+Event	Button click
+Event Source	submitBtn / addBtn
+Event Listener	addEventListener('click', ...)
+Event Handler	Function that updates or reacts
+Response	Text displayed or alert shown
